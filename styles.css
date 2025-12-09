@@ -1,13 +1,21 @@
+/* Reset default margins/padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Grid container */
 #grid {
   display: grid;
   grid-template-rows: repeat(5, 124px);
-  grid-template-columns: repeat(4, 242px); /* whole pixels */
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-template-columns: repeat(4, 242px); /* whole pixels to avoid rounding issues */
+  gap: 10px; /* shorthand for grid-row-gap + grid-column-gap */
 }
 
+/* Grid items styling */
 #grid > div {
-  background: green;
+  background-color: green;
   color: white;
   font-size: 20px;
   display: flex;
@@ -15,7 +23,7 @@
   justify-content: center;
 }
 
-/* Box positions using span */
+/* Specific grid item spans */
 #grid > div:nth-child(1) {
   grid-column: span 4;
 }
@@ -53,5 +61,5 @@
 }
 
 #grid > div:nth-child(10) {
-  grid-column: span 3; /* fixed spaces */
+  grid-column: span 3;
 }
